@@ -11,11 +11,11 @@ end
 
 def reduce(array, starting_value = 0)
   total = starting_value
-  result = 0
-  i = 0 
+  total += yield(array[0], starting_value)
+  i = 1 
   while i < array.length do 
     var = array[i]
-    result = yield(var, total)
+    result = yield(var, 0)
   end 
   result 
 end 
